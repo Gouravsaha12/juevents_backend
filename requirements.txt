@@ -1,0 +1,11 @@
+fastapi[all]
+sqlalchemy
+pydantic-settings
+psycopg2
+alembic
+python-jose[cryptography]
+passlib==1.7.4
+python-multipart
+alembic
+psycopg2-binary
+bcrypt==3.2.2
