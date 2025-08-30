@@ -49,6 +49,7 @@ Follow these steps to get the application running on your local machine.
 ```bash
 git clone <your-repository-url>
 cd juevents_backend
+```
 
 ### 2. Create the Configuration File (.env)
 
@@ -65,13 +66,13 @@ POSTGRES_HOST=db
 POSTGRES_PORT=5432
 
 # FastAPI Database Connection URL
-# Note: The username, password, host, and db name must match the variables above.
-DATABASE_URL="postgresql://juevents_user:your_strong_password_here@db:5432/juevents_db"
+DATABASE_URL=postgresql://juevents_user:your_strong_password_here@db:5432/juevents_db
 
 # Application Settings
 SECRET_KEY=your_very_secret_key_for_jwt
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
+```
 
 ### 3. Build and Run with Docker Compose
 
@@ -83,6 +84,9 @@ docker-compose build
 
 # Start the API and Database containers in the background
 docker-compose up -d
+```
+
+---
 
 ## ✅ Verifying the Setup
 
@@ -90,14 +94,18 @@ After starting the containers, verify everything is running properly.
 
 ### ✅ Check Container Status
 
-Run the following command to check the status of the running containers:
-
 ```bash
 docker-compose ps
+```
 
 ### 📜 View Logs
 
-To view real-time logs from your services, run:
-
 ```bash
 docker-compose logs -f
+```
+
+---
+
+## 🎉 You’re Ready!
+
+Your JUEvents backend is now up and running locally with Docker! 🚀
