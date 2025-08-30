@@ -75,3 +75,15 @@ DATABASE_URL="postgresql://juevents_user:your_strong_password_here@db:5432/jueve
 SECRET_KEY=your_very_secret_key_for_jwt
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+### 3. Build and Run with Docker Compose
+
+From the root of the `juevents_backend` directory, run the following commands:
+
+```bash
+# Build the API image (use --no-cache for a completely fresh build)
+docker-compose build
+
+# Start the API and Database containers in the background
+docker-compose up -d
+
