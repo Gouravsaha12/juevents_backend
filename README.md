@@ -14,8 +14,11 @@ A robust backend service for the JUEvents application, built with FastAPI and Po
 - [✨ Features](#-features)
 - [📋 Prerequisites](#-prerequisites)
 - [🚀 Getting Started](#-getting-started)
+  - [1. Clone the Repository](#1-clone-the-repository)
+  - [2. Create the Configuration File (.env)](#2-create-the-configuration-file-env)
+  - [3. Build and Run with Docker Compose](#3-build-and-run-with-docker-compose)
 - [✅ Verifying the Setup](#-verifying-the-setup)
-- [🗄️ Connecting to the Database](#️-connecting-to-the-database-pgadmin)
+- [🗄️ Connecting to the Database (pgAdmin)](#️-connecting-to-the-database-pgadmin)
 - [🛠️ Common Development Commands](#️-common-development-commands)
 - [🚢 Pushing to Docker Hub](#-pushing-to-docker-hub)
 
@@ -23,10 +26,10 @@ A robust backend service for the JUEvents application, built with FastAPI and Po
 
 ## ✨ Features
 
-* **Modern API Framework**: Built with **FastAPI** for high performance and automatic interactive documentation.
-* **Relational Database**: Uses **PostgreSQL** for reliable and persistent data storage.
-* **Containerized Environment**: Uses **Docker** and **Docker Compose** to ensure a consistent and isolated development environment.
-* **Scalable**: The container-based setup is ready for deployment to any cloud provider.
+- **Modern API Framework**: Built with **FastAPI** for high performance and automatic interactive documentation.
+- **Relational Database**: Uses **PostgreSQL** for reliable and persistent data storage.
+- **Containerized Environment**: Uses **Docker** and **Docker Compose** to ensure a consistent and isolated development environment.
+- **Scalable**: The container-based setup is ready for deployment to any cloud provider.
 
 ---
 
@@ -34,9 +37,9 @@ A robust backend service for the JUEvents application, built with FastAPI and Po
 
 Before you begin, ensure you have the following installed on your system:
 
-* [Docker](https://www.docker.com/get-started)
-* [Docker Compose](https://docs.docker.com/compose/install/) (usually included with Docker Desktop)
-* [Git](https://git-scm.com/downloads)
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/) (usually included with Docker Desktop)
+- [Git](https://git-scm.com/downloads)
 
 ---
 
@@ -46,8 +49,29 @@ Follow these steps to get the application running on your local machine.
 
 ### 1. Clone the Repository
 
-First, clone this repository to your local machine using Git.
-
 ```bash
 git clone <your-repository-url>
 cd juevents_backend
+
+### 2. Create the Configuration File (.env)
+
+The application uses environment variables for configuration. Create a file named `.env` in the root of the `juevents_backend` directory.
+
+Copy and paste the following template into the `.env` file, and modify the values as needed:
+
+```env
+# PostgreSQL Settings
+POSTGRES_USER=juevents_user
+POSTGRES_PASSWORD=your_strong_password_here
+POSTGRES_DB=juevents_db
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+
+# FastAPI Database Connection URL
+# Note: The username, password, host, and db name must match the variables above.
+DATABASE_URL="postgresql://juevents_user:your_strong_password_here@db:5432/juevents_db"
+
+# Application Settings
+SECRET_KEY=your_very_secret_key_for_jwt
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
