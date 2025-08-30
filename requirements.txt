@@ -1,7 +1,6 @@
 fastapi[all]
 sqlalchemy
 pydantic-settings
-psycopg2
 alembic
 python-jose[cryptography]
 passlib==1.7.4

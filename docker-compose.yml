@@ -1,0 +1,25 @@
+services:
+  # Your FastAPI Service
+  api:
+    build: .
+    # Use your actual Docker Hub image name here
+    image: gouravsaha/juevents:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+      
+  # PostgreSQL Service
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    ports:                           # <-- ADD THIS SECTION
+      - "5432:5432"                  # <-- Maps container port 5432 to localhost:5432
+
+volumes:
+  postgres_data:

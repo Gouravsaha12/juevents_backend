@@ -18,7 +18,7 @@ class EventType(str, Enum):
 
 class EventBase(BaseModel):
     title: str
-    description: str | None = None
+    description: Optional[str] = None
     start_datetime: datetime
     end_datetime: datetime
     location: str
