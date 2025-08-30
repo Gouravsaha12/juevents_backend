@@ -18,10 +18,7 @@ A robust backend service for the JUEvents application, built with FastAPI and Po
   - [2. Create the Configuration File (.env)](#2-create-the-configuration-file-env)
   - [3. Build and Run with Docker Compose](#3-build-and-run-with-docker-compose)
 - [✅ Verifying the Setup](#-verifying-the-setup)
-- [🗄️ Connecting to the Database (pgAdmin)](#️-connecting-to-the-database-pgadmin)
-- [🛠️ Common Development Commands](#️-common-development-commands)
-- [🚢 Pushing to Docker Hub](#-pushing-to-docker-hub)
-
+  
 ---
 
 ## ✨ Features
@@ -87,3 +84,20 @@ docker-compose build
 # Start the API and Database containers in the background
 docker-compose up -d
 
+## ✅ Verifying the Setup
+
+After starting the containers, verify everything is running properly.
+
+### ✅ Check Container Status
+
+Run the following command to check the status of the running containers:
+
+```bash
+docker-compose ps
+
+### 📜 View Logs
+
+To view real-time logs from your services, run:
+
+```bash
+docker-compose logs -f
